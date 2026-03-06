@@ -1,0 +1,387 @@
+/* =========================================
+   ESTILOS CSS: RESPONSIVE Y UNIDADES DINÁMICAS
+   ========================================= */
+
+/* --- 1. RESET GENERAL --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- 2. VARIABLES GLOBALES --- */
+:root {
+  --color-primario: rgba(5, 9, 14, 0.97);
+  --color-secundario: #f4f4f4;
+  --color-enlace: rgba(100, 114, 138, 0.45);
+  --color-hover: #003d82;
+  --color-blanco: #ffffff;
+  --color-texto-negro: rgba(0, 0, 0, 0.95);
+  --color-texto-footer: #aaa;
+  --color-sombra-suave: rgba(0, 0, 0, 0.1);
+  --color-sombra-fuerte: rgba(0, 0, 0, 0.2);
+  --color-fondo-footer: #222;
+  --color-fondo-cajas: #ffffff; /* Para las tarjetas blancas */
+  --color-fondo-header: rgba(255, 255, 255, 0.18); /* Para el cristal del menú */
+  --color-borde: rgba(0, 0, 0, 0.05); /* Para los bordes suaves */
+
+  --globalmessage-segment-background: rgb(250, 250, 252);
+  --globalmessage-segment-text-color: rgba(0, 0, 0, 0.9);
+}
+
+/* --- 3. CUERPO DE LA PÁGINA --- */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--globalmessage-segment-text-color);
+  background-color: var(--globalmessage-segment-background);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* --- 4. CONTENEDOR CENTRAL --- */
+.container {
+  width: 100%;
+  max-width: 64rem; /* 64rem = 1024px. Dinámico si el usuario cambia el tamaño de letra */
+  margin: 0 auto;
+  padding: 0 4vw; /* 4vw = 4% del ancho de la pantalla actual. Margen lateral 100% dinámico */
+}
+
+/* --- 5. CABECERA --- */
+header {
+  width: 100%;
+  margin: 0 auto;
+  background: var(--color-fondo-header);
+  border-bottom: 0.1rem solid var(--color-borde);
+  padding: 1rem 0; /* 1rem arriba y abajo */
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 0 0 1rem 1rem; /* Bordes inferiores curvos con rem */
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 2vw;
+}
+
+header h1 {
+  margin-bottom: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+#titulo-principal {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+/* --- 6. MENÚ DE NAVEGACIÓN --- */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem; /* Separación dinámica entre botones en vez de 10px */
+}
+
+nav ul li a.active {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  transform: scale(1.05);
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--color-texto-negro);
+  background-color: var(--color-enlace);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.5rem 1.2rem; /* Relleno del botón con rem */
+  border-radius: 50rem; /* Píldora perfecta dinámica */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  background-color: var(--color-hover);
+  color: var(--color-blanco);
+  transform: scale(1.05);
+  box-shadow: 0 0.25rem 0.8rem var(--color-sombra-fuerte);
+}
+
+/* --- 7. CONTENIDO PRINCIPAL --- */
+main {
+  /* ¡AQUÍ ESTÁ TU SEPARACIÓN EXTRA! */
+  /* 5rem arriba (separa el menú del h2), 0 a los lados, 3rem abajo */
+  padding: 5rem 0 3rem 0;
+}
+
+section {
+  margin-bottom: 5rem; /* Separación de bloques dinámicos */
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem; /* Buena separación debajo del título */
+  text-align: center;
+  letter-spacing: -0.05rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  font-size: 1.15rem;
+  color: var(--globalmessage-segment-text-color);
+  line-height: 1.6;
+}
+
+p .footer-p {
+ color:  #fff;
+}
+
+/* --- 8. IMÁGENES --- */
+.imagen-destacada {
+  width: 90%; /* Ocupa el 90% del espacio disponible (dinámico) */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2.5rem auto; /* Centrado con rem */
+  border-radius: 1rem; /* Bordes dinámicos */
+  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.1);
+}
+
+.video-container {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.video-container video {
+  max-width: 100%;
+  height: auto;
+  border: 0.3rem solid var(--color-blanco);
+  border-radius: 1.2rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+/* --- 9. EFECTO SCROLL TARJETAS (SCROLLYTELLING) --- */
+
+.seccion-scroll-tarjetas {
+  height: 500vh;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.contenedor-pegajoso-tarjetas {
+  position: sticky;
+  top: 15vh;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* El título de la sección */
+.contenedor-pegajoso-tarjetas h2 {
+  /* Le ponemos un fondito oscuro o sombra al texto por si tu PNG es muy claro/oscuro y no se lee bien */
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+  margin-bottom: 3rem;
+}
+
+.fases-stack {
+  display: grid;
+  grid-template-areas: "pila";
+  width: 100%;
+  max-width: 28rem;
+}
+
+/* 🎨 ESTADO APAGADO (Y RECUPERANDO EL DISEÑO BONITO) */
+.fases-stack .fase-card {
+  /* 1. La lógica del apilamiento */
+  grid-area: pila;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4rem) scale(0.9);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin: 0;
+
+  /* 2. ¡El diseño bonito que echabas de menos! */
+  background-color: var(--color-fondo-cajas, white); /* Usa tu variable de modo oscuro o blanco */
+  padding: 3rem 2rem; /* Mucho más aire (espacio) por dentro */
+  border-radius: 1.2rem; /* Bordes bien redondeados */
+  border: 0.1rem solid var(--color-borde, rgba(0,0,0,0.05)); /* Borde sutil */
+  text-align: center;
+}
+
+/* 💡 ESTADO ENCENDIDO / VISIBLE */
+.fases-stack .fase-card.activa {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  /* Le devolvemos la sombra bonita y potente para que "flote" sobre el fondo PNG */
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+}
+
+/* Un pequeño ajuste extra para que los títulos de la tarjeta respiren */
+.fases-stack .fase-card h3 {
+  color: var(--color-primario);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+/* =========================================
+   COLORES DE FONDO POR TARJETA (SÚPER OPTIMIZADO)
+   ========================================= */
+
+/* Solo aplicamos el color de fondo.
+   El texto y los títulos (h3) usarán automáticamente
+   los colores globales de la página que ya tienes definidos. */
+
+.fases-stack .fase-card:nth-child(1) { background-color: rgb(178, 38, 47); } /* Análisis: Rojo */
+.fases-stack .fase-card:nth-child(2) { background-color: rgba(8, 55, 115, 0.9); } /* Diseño: Azul Oscuro */
+.fases-stack .fase-card:nth-child(3) { background-color: rgb(6, 143, 205); } /* Implementación: Azul Claro */
+.fases-stack .fase-card:nth-child(4) { background-color: #1b9a8c; } /* Pruebas: Verde */
+.fases-stack .fase-card:nth-child(5) { background-color: rgba(255, 192, 33, 0.9); } /* Mantenimiento: Amarillo */
+
+/* --- 10. PIE DE PÁGINA --- */
+footer {
+  width: 100%;
+  background-color: var(--color-fondo-footer);
+  color: var(--color-texto-footer);
+  text-align: center;
+  padding: 3rem 0;
+
+  /* MARGEN APPLE DINÁMICO: 4rem arriba, 0 abajo. */
+  margin: 4rem auto 0 auto;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Botones Anterior / Siguiente */
+.nav-button {
+  background-color: rgb(100 114 138);
+  color: var(--color-blanco);
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  border-radius: 50rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: var(--color-hover);
+  transform: scale(1.05);
+}
+/* =========================================
+   --- 11: MODO CLARO / OSCURO
+   ========================================= */
+
+/* Estilo para el botón del tema */
+.btn-tema {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 50rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-right: 1rem; /* Lo separa un poco del menú */
+}
+
+.btn-tema:hover {
+  transform: scale(1.05);
+  background-color: var(--color-hover);
+}
+
+/* LA MAGIA: Cuando el body tiene la clase 'dark-mode', cambiamos los colores base */
+body.dark-mode {
+  --globalmessage-segment-background: #1a1a1a;
+  --globalmessage-segment-text-color: #f4f4f4;
+  --color-secundario: #222;
+  --color-fondo-footer: #000;
+  --color-primario: #66b2ff;
+
+  /* Nuevas variables oscuras */
+  --color-fondo-cajas: rgba(42, 42, 42, 0.48);
+  --color-fondo-header: rgba(42, 42, 42, 0.48);
+  --color-borde: rgba(255, 255, 255, 0.25);
+  --color-texto-negro: #f4f4f4; /* Esto oscurece el texto del menú automáticamente */
+}
+
+/* Oscurecemos también las tarjetas blancas del index y la cabecera */
+body.dark-mode .fase-card,
+body.dark-mode header {
+  background-color: rgba(42, 42, 42, 0.48);
+  color: #f4f4f4;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+body.dark-mode .fase-card h3 {
+  color: rgba(255, 255, 255, 0.89); /* Títulos de tarjeta en azul clarito */
+}
+
+body.dark-mode nav ul li a {
+  color: #f4f4f4; /* Letras del menú claras */
+}
+/* --- 12. DISEÑO RESPONSIVE (MÓVILES) --- */
+/* 48rem equivale a los clásicos 768px */
+@media (max-width: 48rem) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  nav ul {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  nav ul li a {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  h1#titulo-principal {
+    font-size: 1.4rem;
+  }
+
+  main {
+    padding: 3rem 0; /* En móviles reducimos un poco el espacio superior para no perder tanta pantalla */
+  }
+
+  .container {
+    padding: 0 4vw;
+  }
+
+  .fases-grid {
+    grid-template-columns: 1fr; /* 1 sola columna obligatoria en móviles */
+    max-width: 25rem;
+    margin: 0 auto;
+  }
+
+  header, footer, .container {
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  header {
+    border-radius: 0 0 1rem 1rem;
+  }
+}
